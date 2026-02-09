@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3mainsn001"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="PackedScene" uid="uid://c3gamesn001" path="res://scenes/game.tscn" id="2_game"]
+[ext_resource type="PackedScene" uid="uid://c3hudsn001" path="res://scenes/ui/hud.tscn" id="3_hud"]
+[ext_resource type="PackedScene" uid="uid://c3gmovr001" path="res://scenes/ui/game_over.tscn" id="4_go"]
+[ext_resource type="PackedScene" uid="uid://c3lvlup001" path="res://scenes/ui/level_up.tscn" id="5_lu"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_main")
+
+[node name="Game" parent="." instance=ExtResource("2_game")]
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="UILayer" instance=ExtResource("3_hud")]
+
+[node name="GameOver" parent="UILayer" instance=ExtResource("4_go")]
+
+[node name="LevelUp" parent="UILayer" instance=ExtResource("5_lu")]
